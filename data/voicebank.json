@@ -3,10 +3,15 @@
   "nameRomaji": "Akineto",
   "voiceProvider": "秋海棠",
   "language": "ja",
-  "engines": ["UTAU", "OpenUtau"],
+  "engines": [
+    "UTAU",
+    "OpenUtau"
+  ],
   "distribution": "BowlRoll",
   "password": "0719",
-  "audio": { "format": "WAV" },
+  "audio": {
+    "format": "WAV"
+  },
   "hasOtoIni": true,
   "banks": [
     {
@@ -31,7 +36,7 @@
     }
   ],
   "credits": {
-    "voiceBankProduction": "秋音棠",
+    "voiceBankProduction": "秋海棠",
     "voiceProvider": "秋海棠",
     "rendanOtoIni": "蓝色肥猫"
   },
