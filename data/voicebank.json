@@ -9,6 +9,7 @@
   ],
   "distribution": "BowlRoll",
   "password": "0719",
+  "passwordScope": "BowlRoll 下载密码：在配布页点下载时输入，不是压缩包解压密码",
   "audio": {
     "format": "WAV"
   },

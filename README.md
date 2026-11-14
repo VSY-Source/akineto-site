@@ -3,7 +3,7 @@
 角色「秋音棠（Akineto）」的声库配布网站，纯静态、全站简体中文。
 
 - 首页 / 角色 / 声库 / 下载 / 使用条款 / 教程 FAQ / 公告 / 制作名单，共 8 个页面
-- 两款声库：**VCV 连续音** 与 **连单（单独音＋VC）**，UTAU 与 OpenUtau 通用，BowlRoll 配布，解压密码 **0719**
+- 两款声库：**VCV 连续音** 与 **连单（单独音＋VC）**，UTAU 与 OpenUtau 通用，BowlRoll 配布，下载密码 **0719**（配布页点下载时输入的密码，**不是 zip 解压密码**，解压压缩包本身不需要密码）
 - 无构建步骤、无框架、无外部 CDN（离线可用，字体用系统中文字体）
 - 响应式（375px 起）、明暗双主题、下载前条款勾选、密码一键复制、FAQ 手风琴、试听播放器
 
@@ -49,7 +49,10 @@ utau-site/
 │  └─ voicebank.json     声库数据（两个 BowlRoll 链接、密码）
 └─ tools/
    ├─ make_demo_audio.py 生成示例试听音频
-   └─ init_repo.py       用 dulwich 初始化本地 Git 仓库（环境无 git 时用）
+   ├─ init_repo.py       用 dulwich 初始化本地 Git 仓库（环境无 git 时用）
+   ├─ deploy_github.py   建仓库 / 推送 main / 开启 Pages（需先写 tools/.token）
+   ├─ cleanup_repo.py    清理误提交的凭据缓存
+   └─ repack_site.py     重新打包 akineto-site.zip（python tools/repack_site.py）
 ```
 
 页面是静态 HTML，`data/*.json` 不参与渲染，改内容时以 HTML 为准并同步 JSON。
@@ -67,13 +70,13 @@ utau-site/
 | 头像 / 站点 logo / favicon | 替换 `akineto-icon.jpg` 后重新生成（见下） |
 | 声库规格 | `voicebank.html` 的 `.specs` + `data/voicebank.json` |
 | BowlRoll 链接 | 全部页面页脚 + `download.html` + `voicebank.html` + `terms.html` + `news.html` |
-| 解压密码 | 同上（目前统一为 `0719`，可全局替换） |
+| 下载密码 | 同上（目前统一为 `0719`，可全局替换） |
 | 试听音频 | 替换 `assets/audio/demo-0X.wav`，并改首页曲名/使用声库说明 |
 | 使用条款 | `terms.html`（两个 `.rule` 列表 + 下方 `.prose`） |
 | 制作名单 | `credits.html` |
 
 > 页头页脚在 8 个页面里是重复的，改联系方式 / 链接时建议用编辑器「全局替换」。
-> 解压密码出现在首页、下载页、声库页、页脚等多处，搜索 `0719` 即可全部改到。
+> 下载密码出现在首页、下载页、声库页、页脚等多处，搜索 `0719` 即可全部改到。
 
 ### 重新生成 logo 与 favicon
 
@@ -118,7 +121,7 @@ Build Command 留空、Output Directory 填 `.`。
 
 - [ ] 角色资料与立绘确认为最新版本
 - [ ] 两个 BowlRoll 链接可正常打开（VCV #363263 / 连单 #358934）
-- [ ] 解压密码确认无误（当前 `0719`）
+- [ ] 下载密码确认无误（当前 `0719`）
 - [ ] 试听音频换成真实 Demo，曲名与「使用声库」说明正确
 - [ ] 使用条款按实际情况确认（商用 / 修改 / 二次配布 / R-18）
 - [ ] 制作名单确认：声源秋海棠 / 连单原音设定蓝色肥猫
@@ -168,6 +171,9 @@ git push -u origin main
 - 首屏立绘用 `object-fit: contain` 显示透明 WebP，不会裁掉裙摆和头部。
 - 配色变量在 `:root`：`--c-primary`（青色）、`--c-accent`（蓝紫色），改这两个就能换主色。
 - 断点：`880px`（导航折叠、双栏转单栏）、`640px`（字号与间距收紧）。
+- **`0719` 的性质是 BowlRoll 的下载密码**：在配布页点「ダウンロード」时输入，通过后才会给出压缩包；解压 zip 本身不需要密码。全站文案统一用「下载密码」，不要写成「解压密码」。
+- 改完内容后重新分发：`python tools/repack_site.py` 重新生成 `akineto-site.zip`。
+- 重新部署线上：把 GitHub PAT 写入 `tools/.token`（单行），再执行 `python tools/deploy_github.py`，脚本会提交、推送 `main` 并检查 Pages 状态；跑完记得删掉 `tools/.token`。
 
 ---
 
