@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使用教程・FAQ｜秋音棠 Akineto</title>
+<meta name="description" content="秋音棠声库的导入方法与常见问题：两个版本的区别、解压密码 0719、没有声音怎么办，以及 UTAU 术语说明。">
+<meta name="theme-color" content="#45cfc9">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="使用教程・FAQ｜秋音棠">
+<meta property="og:image" content="assets/art/akineto-icon.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('uta-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body data-page="guide">
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="notice-bar">
+  <div class="wrap">
+    <span>使用前请务必阅读<a href="terms.html">《使用条款》</a>。</span>
+    <span>最后更新：2026.11.14</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="秋音棠 声库配布站 首页">
+      <span class="brand__mark" aria-hidden="true">
+        <img src="assets/art/akineto-mark.png" alt="" width="128" height="128">
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">秋音棠</span>
+        <span class="brand__sub">AKINETO</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="主菜单">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-page="home" href="index.html">首页</a></li>
+        <li><a class="nav__link" data-page="character" href="character.html">角色</a></li>
+        <li><a class="nav__link" data-page="voicebank" href="voicebank.html">声库</a></li>
+        <li><a class="nav__link" data-page="download" href="download.html">下载</a></li>
+        <li><a class="nav__link" data-page="terms" href="terms.html">条款</a></li>
+        <li><a class="nav__link" data-page="guide" href="guide.html">教程</a></li>
+        <li><a class="nav__link" data-page="credits" href="credits.html">制作</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="切换至深色主题">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">首页</a> / GUIDE</p>
+      <h1 class="page-title">使用教程・FAQ</h1>
+      <p class="page-lead">为了第一次使用 UTAU 的人也能看懂，这里整理了导入步骤和容易卡住的地方。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">SET UP</p>
+        <h2 class="section-title">导入步骤</h2>
+        <p class="section-lead">UTAU 本体需要另行安装，请从官方网站下载。</p>
+      </div>
+      <ol class="steps">
+        <li class="steps__item">
+          <h3>在 BowlRoll 下载</h3>
+          <p>从<a href="download.html">下载页</a>前往配布页，选择 VCV 或连单版本下载压缩包。</p>
+        </li>
+        <li class="steps__item">
+          <h3>输入密码解压</h3>
+          <p>解压时输入密码 <code>0719</code>。请完整解压，不要在压缩软件里直接双击打开。</p>
+        </li>
+        <li class="steps__item">
+          <h3>放进对应引擎的文件夹</h3>
+          <p>UTAU 放进安装目录下的 <code>voice</code>；OpenUtau 放进 <code>Singers</code> 目录，或在偏好设置里添加歌手路径。</p>
+        </li>
+        <li class="steps__item">
+          <h3>重启并选择音源</h3>
+          <p>打开 UTAU 或 OpenUtau，在音源列表选择「秋音棠」。两个版本都装了的话，会分别显示。</p>
+        </li>
+      </ol>
+
+      <div class="section-head mt-40">
+        <p class="eyebrow">ENGINES</p>
+        <h2 class="section-title">两种引擎的放置位置</h2>
+        <p class="section-lead">同一份声库文件夹，UTAU 与 OpenUtau 都能直接读取，不需要转换格式。</p>
+      </div>
+      <div class="grid grid--2">
+        <article class="card card--pad reveal">
+          <span class="tag">UTAU</span>
+          <h3 class="feature-title">UTAU（Windows）</h3>
+          <p class="section-lead">把声库文件夹放进 UTAU 安装目录下的 <code>voice</code> 文件夹，重启后在音源列表选择。</p>
+          <ul class="info-list mt-20">
+            <li><strong>放置位置</strong><span>UTAU 安装目录 / <code>voice</code></span></li>
+            <li><strong>生效方式</strong><span>重启 UTAU</span></li>
+          </ul>
+        </article>
+        <article class="card card--pad reveal">
+          <span class="tag tag--pink">OpenUtau</span>
+          <h3 class="feature-title">OpenUtau（Win / macOS / Linux）</h3>
+          <p class="section-lead">放进 OpenUtau 的 <code>Singers</code> 文件夹，或在偏好设置里添加歌手搜索路径。</p>
+          <ul class="info-list mt-20">
+            <li><strong>放置位置</strong><span>OpenUtau / <code>Singers</code></span></li>
+            <li><strong>读取内容</strong><span>oto.ini（无需转换）</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title">常见问题</h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>OpenUtau 可以用吗？</summary>
+          <div class="faq__body"><p>可以。两款声库都是 UTAU / OpenUtau 通用的：把声库文件夹放进 OpenUtau 的 <code>Singers</code> 目录，或在偏好设置里添加歌手路径即可，OpenUtau 会直接读取包内的 oto.ini。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>两个版本可以同时安装吗？</summary>
+          <div class="faq__body"><p>可以。VCV 与连单是独立文件夹，放在同一个目录下即可，音源列表里会分别显示，互不影响。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>VCV 和连单有什么区别？</summary>
+          <div class="faq__body"><p>VCV 是连续音声库，歌词按「- あ」这样的连续音格式写；连单由单独音（CV）和 VCCV 的 VC 部组成，主唱用单独音「あ」，音节之间用 VC 补衔接。连单比纯单独音连贯，也比 VCV 好上手。拿不准的话可以两个都下载，对比着用。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>解压密码是什么？</summary>
+          <div class="faq__body"><p>两个版本的解压密码都是 <code>0719</code>。复制时注意不要带上多余的空格。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>配布页打不开</summary>
+          <div class="faq__body"><p>配布页在外部站点 BowlRoll，可能会因为网络或维护暂时无法访问。请稍后重试；如果长时间无法打开，可以通过页脚的配布页链接确认最新状态。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>音源列表里没有「秋音棠」</summary>
+          <div class="faq__body"><p>请确认声库文件夹是否直接放在 UTAU 的 <code>voice</code> 文件夹里。如果出现双层文件夹，请把里层移出来。重启仍无效时，可以尝试把文件夹名改成半角英文。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>放了音符却没有声音</summary>
+          <div class="faq__body"><p>请确认音源是否选中、音符是否在音域内。把重采样器改成「model4」或「w4u」可能会改善。仍然没有声音时，请检查 UTAU 的输出设备设置。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>声音破音・有噪音</summary>
+          <div class="faq__body"><p>调低参数 <code>g</code> 的值（例如 <code>g-8</code>）可以降低音量、减少破音。也请检查原音设定里的「先行发声」与「重叠」是否被设成了极端值。</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>想在 Mac 上使用</summary>
+          <div class="faq__body"><p>UTAU 是 Windows 软件。Mac 上可以使用 UTAU-Synth 等兼容软件，或通过 Wine 等环境运行。无法保证正常运行，请谅解。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">GLOSSARY</p>
+        <h2 class="section-title">术语表</h2>
+      </div>
+      <div class="card card--pad">
+        <dl class="glossary">
+          <div><dt>CV（单独音）</dt><dd>逐个录制「あ」「い」等单音的方式。容易上手，但衔接处比较明显。</dd></div>
+          <div><dt>VCV（连续音）</dt><dd>把前一个音和后一个音连起来录制（如「a あ」），可以唱得更顺滑。</dd></div>
+          <div><dt>连单</dt><dd>由单独音（CV）与 VCCV 的 VC 部组成的声库。主唱用单独音，音节之间用 VC 补衔接。</dd></div>
+          <div><dt>oto.ini（原音设定）</dt><dd>调整每个音的长短与衔接的配置文件。没有它就无法正确演唱。</dd></div>
+          <div><dt>frq（频率表）</dt><dd>记录声音音高变化的文件，有助于稳定音准。</dd></div>
+          <div><dt>重采样器</dt><dd>转换音高的引擎，会改变音质与手感。</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg>
+        <p><strong>还是无法解决？</strong>请附上你的环境（系统版本、UTAU 版本）和症状，通过页脚的配布页链接联系我们。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/art/akineto-mark.png" alt="" width="128" height="128">
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">秋音棠</span>
+          <span class="brand__sub">AKINETO</span>
+        </span>
+      </a>
+      <p>秋音棠（Akineto）是一款免费的 UTAU 声库，提供 VCV 连续音与连单两个版本，UTAU 与 OpenUtau 通用。角色与声库的著作权归制作者所有，使用前请确认《使用条款》。</p>
+    </div>
+    <nav aria-label="页脚菜单">
+      <h2 class="footer-title">MENU</h2>
+      <div class="footer-links">
+        <a href="character.html">角色</a>
+        <a href="voicebank.html">声库详情</a>
+        <a href="download.html">下载</a>
+        <a href="terms.html">使用条款</a>
+        <a href="guide.html">教程・FAQ</a>
+        <a href="credits.html">制作名单</a>
+      </div>
+    </nav>
+    <div>
+      <h2 class="footer-title">BowlRoll</h2>
+      <div class="footer-links">
+        <a href="https://bowlroll.net/file/363263" target="_blank" rel="noopener noreferrer">VCV 连续音 配布页</a>
+        <a href="https://bowlroll.net/file/358934" target="_blank" rel="noopener noreferrer">连单 配布页</a>
+        <a href="news.html">公告</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span data-year>2026</span> 秋音棠 / Akineto</p>
+    <p>本网站为示例站点。UTAU 由饗庭淵开发；OpenUtau 是开源的歌声合成编辑器。</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
