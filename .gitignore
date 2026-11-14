@@ -2,3 +2,5 @@
 Thumbs.db
 desktop.ini
 *.log
+tools/.device.json
+tools/.token
