@@ -875,3 +875,90 @@ code { padding: 2px 6px; border: 1px solid var(--c-line); border-radius: 0; colo
   .no-js .nav { display: block; position: static; }
   .no-js .nav__list { flex-wrap: wrap; }
 }
+
+/* ==========================================================================
+   APPLE.COM RADIUS LAYER  (v2 — 仿 apple.com 的圆角语言)
+   参考 apple.com 的做法：
+     · 卡片 / 内容块 28px，大面板与主视觉 36px 级大圆角
+     · 按钮用 980px 胶囊（Apple 官网 CTA 的标准写法）
+     · 图片一律跟随容器大圆角并 overflow 裁切
+     · 支持 corner-shape 的浏览器启用 squircle，得到 iOS/macOS 的连续曲率，
+       而不是普通圆弧 —— 这是「苹果味」最关键的一步
+     · 阴影改为近距离一层 + 超长超淡一层（官网的柔和悬浮感）
+   回退：整节删除即恢复原框架的直角切角风格。
+   ========================================================================== */
+:root {
+  --r-xs: 10px;    /* 勾选框 / 内联代码 / 小标签 */
+  --r-sm: 14px;    /* 导航项 / 小控件 */
+  --r-md: 20px;    /* 次级面板 / 图片 */
+  --r-lg: 28px;    /* 卡片 */
+  --r-xl: 36px;    /* 大面板 / 主视觉 */
+  --r-pill: 980px; /* Apple 官网的胶囊按钮半径 */
+  --r-shadow: 0 2px 6px rgba(0, 0, 0, .16), 0 26px 60px -44px rgba(0, 0, 0, .9);
+  --r-shadow-lg: 0 4px 14px rgba(0, 0, 0, .2), 0 48px 100px -60px rgba(0, 0, 0, .95);
+}
+
+/* 1) 原框架用 clip-path 切六边形斜角，会让圆角完全不可见，先归零 */
+.btn, .btn--ghost, .btn--accent, .brand__mark { clip-path: none; }
+
+/* 2) 大面板 / 主视觉容器 —— 最大的圆角 */
+.char-visual, .art-card__frame, .demo-console, .lightbox__inner, .site-menu__shell,
+.home-character__grid, .download-cta, .cta, .hero__visual, .hero__portrait,
+.home-character__visual { border-radius: var(--r-xl); }
+
+/* 3) 卡片与内容块 —— 官网正文卡片的标准尺度 */
+.card, .card--pad, .bank-panel, .rule, .dl-card, .gate, .callout, .codeblock,
+.faq__item, .sha, .steps__item, .home-news__aside, .prose .note, .specs,
+.staff, .rule-grid { border-radius: var(--r-lg); }
+
+/* 4) 图片跟随容器圆角并裁切（Apple 官网的图块一律带圆角） */
+.hero__visual, .hero__portrait, .home-character__visual, .art-card__frame,
+.char-visual, .demo-console__cover, .lightbox__inner, .site-menu__aside img {
+  overflow: hidden;
+}
+.demo-console__cover, .lightbox img, .site-menu__aside img,
+.art-card__frame img, .char-visual img, .hero__portrait img,
+.home-character__visual img { border-radius: var(--r-md); }
+
+/* 5) 按钮：980px 胶囊，等同 apple.com 的 CTA */
+.btn, .btn--ghost, .btn--accent, .copy-btn, .footer-password__copy,
+.hero__form-switch, .hero__form-switch button { border-radius: var(--r-pill); }
+
+/* 6) 导航与小控件 */
+.nav__link, .site-menu__link, .site-menu__close, .lightbox__close { border-radius: var(--r-sm); }
+
+/* 7) 标签 / 状态：胶囊 */
+.tag, .news__tag, .status-label, .status-label i, .notice-bar__signal { border-radius: var(--r-pill); }
+
+/* 8) 圆形图标按钮 */
+.track__play, .theme-toggle, .menu-toggle, .nav-toggle, .lightbox__close,
+.site-menu__close, .brand__mark { border-radius: 50%; }
+
+/* 9) 小元素 */
+.gate__check input, code, .rule__mark, .track__format, .hero__serial,
+.btn__code, .news__date { border-radius: var(--r-xs); }
+
+.signal-strip, .signal-strip__track { border-radius: var(--r-md); }
+
+/* 10) 柔和悬浮感，替代原来的纯平面对比 */
+.card, .dl-card, .bank-panel, .cta, .download-cta, .demo-console, .faq__item,
+.gate, .rule { box-shadow: var(--r-shadow); }
+.char-visual, .art-card__frame, .home-character__visual, .hero__portrait {
+  box-shadow: var(--r-shadow-lg);
+}
+
+/* 11) 卡片右上的 L 形角标：圆角后内缩，避免悬在弧线之外 */
+.card::after { top: 14px; right: 14px; width: 14px; height: 14px; opacity: .38; }
+
+/* 12) 连续曲率：Chrome 139+ / Edge 支持；其余浏览器自动回落普通圆角 */
+@supports (corner-shape: squircle) {
+  .card, .card--pad, .bank-panel, .rule, .dl-card, .gate, .callout, .codeblock,
+  .faq__item, .sha, .steps__item, .home-news__aside, .prose .note, .specs, .staff,
+  .char-visual, .art-card__frame, .demo-console, .lightbox__inner, .site-menu__shell,
+  .home-character__grid, .download-cta, .cta, .hero__visual, .hero__portrait,
+  .home-character__visual, .btn, .btn--ghost, .btn--accent, .copy-btn, .tag,
+  .news__tag, .status-label, .gate__check input, .rule__mark, code, .placeholder,
+  .lightbox img, .demo-console__cover, .signal-strip, .nav__link, .site-menu__link {
+    corner-shape: squircle;
+  }
+}
