@@ -1,0 +1,12 @@
+# 本地/生成物，不进仓库
+previews/
+__pycache__/
+*.pyc
+.edge-test/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 凭据（部署脚本读取，绝不能提交）
+tools/.token
+tools/.device.json
