@@ -1,0 +1,21 @@
+{
+  "name": "秋音棠",
+  "nameRomaji": "Akineto",
+  "voiceProvider": "秋海棠",
+  "image": "assets/art/akineto-stand.webp",
+  "imageAlt": "assets/art/akineto-alt.webp",
+  "icon": "assets/art/akineto-icon.jpg",
+  "profile": {
+    "age": "19",
+    "birthday": "4 月 6 日",
+    "personality": "乐观、偏执",
+    "likes": ["画画", "薄荷", "抹茶", "阳光", "大海", "鸟类"],
+    "dislikes": ["消毒水", "铁锈", "血腥味", "蛇类"],
+    "imageColor": ["青色 #45cfc9", "蓝紫色 #a58cf0"],
+    "trivia": "嘴巴是青色的，似乎是薄荷嚼多了"
+  },
+  "engines": ["UTAU", "OpenUtau"],
+  "credit": "秋音棠（Akineto）",
+  "updated": "2026-11-14",
+  "note": "内容整理自角色公开设定；身高、血型等未公开项目可后续补充。"
+}
